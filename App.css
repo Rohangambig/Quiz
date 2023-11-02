@@ -1,0 +1,107 @@
+body{
+    background-color:rgb(249, 205, 249);
+    margin: 0px;
+}
+.container
+{
+    max-width: 900PX;
+    margin: 1rem 2rem;
+}
+
+.card-grid
+{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 1rem;
+}
+.header
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(249, 205, 249);
+    padding: 0 1.5rem;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,.3);
+}
+.form-group
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem   
+}
+.btn
+{
+    background-color: hsl(207, 100%, 50%);
+    color: white;
+    padding: .5rem 1em;
+    border-radius: 3em;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover
+{
+    background-color: hsl(200,100%,40%);
+}
+
+.form-group > label{
+    color: #514f4f;
+    font-size: 0.75rem;
+    margin-bottom: .25rem;
+}
+
+.card
+{
+    display: flex;
+    justify-content: CENTER;
+    align-items: center;
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 0 5px 2px black;
+    background-color: white;
+    transform-style: preserve-3d;
+    height: 200px;
+    cursor: pointer;
+    transition: 150ms;
+    background-image:linear-gradient(rgb(255, 198, 255),rgb(255, 36, 233)) ;
+    transform:perspective(1000px) rotateY(var(--rotate,0)) translateY(var(--translate-y,0));
+}
+.card:hover
+{
+    --translate-y:-5px;
+    box-shadow: 0 0 5px 2px rgba(0,0,0),0 0 10px 3px rgba(0,0,0);
+}
+.card.flip
+{
+    --rotate:180deg;
+}
+.card .front
+{
+   left: 0; 
+}
+.card .front ,
+.card .back
+{
+    padding: 1rem;
+    position: absolute;
+    backface-visibility: hidden;
+}
+.card .back
+{
+    transform: rotateY(180deg);
+}
+.front-options
+{
+    margin-top: .5rem;
+}
+.option
+{
+    margin-top: .25rem;
+    color: #292929;
+    font-size: .85rem;
+}
+.option:first-child
+{
+    margin-top: 0px;
+}
